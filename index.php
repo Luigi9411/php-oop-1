@@ -1,26 +1,37 @@
 <? 
 class Movie {
    public $title;
-   public $date;
    public $actor;
    public $typology;
-   public $age;
-   public $adult = 18;
+   public $year;
 
-   public function __construct($title,$date,$actor,$typology,)
+   public function __construct($title,$actor,$typology,$year)
    {
     $this->title = $title;
-    $this->date = $date;
     $this->actor = $actor;
     $this->typology = $typology;
+    $this->year = $year;
    }
+
+   public function setEta($year) {
+    if (is_integer($year) && $year >= 0) {
+        $this->year = $year;
+    }
+    return $year;
+}
+
+public function getYear() {
+    return $this->year;
+}
+
 } 
 
-$spiderman = new Movie('Spiderman', '15-12-2020','Pitter','action');
-$ghost = new Movie('Ghost', '13-12-1998','Maria','romantic');
+$spiderman = new Movie('Spiderman','Tobey Maguire, ','action',2002);
+$ghost = new Movie('Ghost','Patrick Swayze','romantic',1990);
 
-echo $spiderman;
-echo '<br>';
-echo $ghost;
 
+var_dump($spiderman);
+var_dump($ghost);
 ?>
+
+
