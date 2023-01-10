@@ -10,10 +10,10 @@ class Movie {
     $this->title = $title;
     $this->actor = $actor;
     $this->typology = $typology;
-    $this->year = $year;
+    $this->setYear($year);
    }
 
-   public function setEta($year) {
+   public function setYear($year) {
     if (is_integer($year) && $year >= 0) {
         $this->year = $year;
     }
